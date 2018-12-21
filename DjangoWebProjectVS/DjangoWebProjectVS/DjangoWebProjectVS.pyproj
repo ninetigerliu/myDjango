@@ -37,6 +37,9 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="DjangoWebProjectVS\bs.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DjangoWebProjectVS\search.py">
       <SubType>Code</SubType>
     </Compile>
@@ -57,6 +60,9 @@
     <Compile Include="DjangoWebProjectVS\settings.py" />
     <Compile Include="DjangoWebProjectVS\urls.py" />
     <Compile Include="DjangoWebProjectVS\wsgi.py" />
+    <Compile Include="MathFinance\blackScholes.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -69,6 +75,7 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="DjangoWebProjectVS\" />
+    <Folder Include="MathFinance\" />
     <Folder Include="templates\" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +110,7 @@
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
     <Content Include="templates\base.html" />
+    <Content Include="templates\blackScholeCalculator.html" />
     <Content Include="templates\hello.html" />
     <Content Include="templates\post.html" />
     <Content Include="templates\search_form.html" />

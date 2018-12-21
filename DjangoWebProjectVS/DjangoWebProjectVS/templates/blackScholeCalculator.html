@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BlackScholes Formula</title>
+</head>
+<body>
+    <p>请输入 optionType: C/P; s; k; r; vol; t</p>
+
+    <form action="/bs" method="post">
+        {% csrf_token %}
+        <input type="text" name="optionType">
+        <input type="text" name="s">
+        <input type="text" name="k">
+        <input type="text" name="r">
+        <input type="text" name="vol">
+        <input type="text" name="t">
+        <input type="submit" value="计算">
+    </form>
+
+    <p>计算结果：{{ rlt }}</p>
+</body>
+</html>
