@@ -13,7 +13,8 @@ def search_form(request):
 def search(request):
     request.encoding = 'utf-8'
     if 'q' in request.GET:
-        message = '你搜索的内容为: ' + request.GET['q']
+        message = '你搜索的内容为: ' + request.GET['q'] + '\n'
+        message += '\n 计算结果为： ' + str(int(request.GET['a']) + int(request.GET['b']))
     else:
         message = '你提交了空表单'
     return HttpResponse(message)

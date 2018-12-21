@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{a1b42af6-d811-45bd-a3a2-8a663da082c2}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>MSBuild|venv|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="HelloWorld\search.py" />
+    <Compile Include="HelloWorld\search2.py" />
+    <Compile Include="HelloWorld\settings.py" />
+    <Compile Include="HelloWorld\testdb.py" />
+    <Compile Include="HelloWorld\urls.py" />
+    <Compile Include="HelloWorld\view.py" />
+    <Compile Include="HelloWorld\wsgi.py" />
+    <Compile Include="HelloWorld\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="TestModel\admin.py" />
+    <Compile Include="TestModel\apps.py" />
+    <Compile Include="TestModel\migrations\0001_initial.py" />
+    <Compile Include="TestModel\migrations\__init__.py" />
+    <Compile Include="TestModel\models.py" />
+    <Compile Include="TestModel\tests.py" />
+    <Compile Include="TestModel\views.py" />
+    <Compile Include="TestModel\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="templates\base.html" />
+    <Content Include="templates\hello.html" />
+    <Content Include="templates\post.html" />
+    <Content Include="templates\search_form.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HelloWorld" />
+    <Folder Include="templates" />
+    <Folder Include="TestModel" />
+    <Folder Include="TestModel\migrations" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="HelloWorld\venv\">
+      <Id>venv</Id>
+      <Description>venv (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <Version>3.7</Version>
+      <Architecture>X64</Architecture>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+</Project>
