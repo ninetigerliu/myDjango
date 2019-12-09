@@ -24,6 +24,7 @@ bld/
 
 # Python env
 DjangoWebProjectVS/DjangoWebProjectVS/env/
+HelloWorld/HelloWorld/
 
 # Visual Studio 2015 cache/options directory
 .vs/
