@@ -112,6 +112,7 @@
     <Content Include="templates\base.html" />
     <Content Include="templates\blackScholeCalculator.html" />
     <Content Include="templates\hello.html" />
+    <Content Include="templates\mathExample.html" />
     <Content Include="templates\post.html" />
     <Content Include="templates\search_form.html" />
   </ItemGroup>

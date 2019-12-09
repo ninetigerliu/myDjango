@@ -15,13 +15,13 @@ def BlackScholes(type : str, S0 : float, K : float, r : float, sigma : float, T 
     else:
        return K * np.exp(-r * T) * ss.norm.cdf(-d2(S0, K, r, sigma, T)) - S0 * ss.norm.cdf(-d1(S0, K, r, sigma, T))
 
-#%% Test
-s=100.
-k=90.
-rate=0.01
-vol=0.2
-timeToExpiry='1.'
-optionType="C"
+##%% Test
+#s=100.
+#k=90.
+#rate=0.01
+#vol=0.2
+#timeToExpiry='1.'
+#optionType="C"
 
-#%% output
-BlackScholes(optionType,s,k,rate,vol,timeToExpiry)
+##%% output
+#BlackScholes(optionType,s,k,rate,vol,timeToExpiry)

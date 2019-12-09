@@ -1,23 +1,82 @@
 ﻿<!DOCTYPE html>
-<html>
 <head>
     <meta charset="utf-8">
-    <title>BlackScholes Formula</title>
+    <script type="text/x-mathjax-config">
+	    MathJax.Hub.Config({
+	    TeX: {extensions: ["mhchem.js"]}
+	    });
+    </script>
+    <script type="text/javascript" async
+	    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
-<body>
-    <p>请输入 optionType: C/P; s; k; r; vol; t</p>
+
+<h1 style="color: #4485b8;">BlackSchole formula</h1>
+<p >
+Use the well-known formula to calculate vanilla call and put options:
+    \begin{align}
+        Call = & S N(d_1) - K e^{-r t} N(d_2) \\
+        Put = & K e^{-r t} N(-d_2) - N(-d_1) S 
+    \end{align}
+where
+    $$ d_1 = \frac{1}{\sigma \sqrt{t} } [ \ln(\frac{S}{K}) + (r-\frac{\sigma^2}{2}t) ] $$
+and
+    $$ d_2 = d_1 - \sigma \sqrt{t} $$
+</p>
 
     <form action="/bs" method="post">
         {% csrf_token %}
-        <input type="text" name="optionType">
-        <input type="text" name="s">
-        <input type="text" name="k">
-        <input type="text" name="r">
-        <input type="text" name="vol">
-        <input type="text" name="t">
-        <input type="submit" value="计算">
-    </form>
 
-    <p>计算结果：{{ rlt }}</p>
-</body>
-</html>
+        <table class="editorDemoTable" style="vertical-align: top; width: 222px; height: 174px;">
+        <tbody>
+        <tr style="height: 25px;">
+        <td style="min-width: 140px; width: 208px; height: 25px;"><strong>OptionType (C/P)</strong></td>
+        <td style="width: 53px; height: 25px;">
+            <input type="text" name="optionType">
+        </td>
+        </tr>
+        <tr style="height: 35px;">
+        <td style="width: 208px; height: 35px;"><strong>S (100.)</strong></td>
+        <!--<td style="background-color: rgba(0, 0, 0, 0.1); width: 53px; height: 35px;">
+            <p>
+                <input type="text" name="s">
+            </p>
+        </td>-->
+        <td style="width: 53px; height: 25px;">
+            <input type="text" name="s">
+        </td>
+        </tr>
+        <tr style="height: 25px;">
+        <td style="width: 208px; height: 25px;"><strong>K (90.)</strong></td>
+        <td style="width: 53px; height: 25px;">
+            <input type="text" name="k">
+        </td>
+        </tr>
+        <tr style="height: 25px;">
+        <td style="width: 208px; height: 25px;"><strong>r (0.02)</strong></td>
+        <td style="width: 53px; height: 25px;">
+            <input type="text" name="r">
+        </td>
+        </tr>
+        <tr>
+        <td style="width: 208px;"><strong>vol (0.2)</strong></td>
+        <td style="width: 53px;">
+            <input type="text" name="vol">
+        </td>
+        </tr>
+        <tr>
+        <td style="width: 208px;"><strong>t (1.0)</strong></td>
+        <td style="width: 53px;">
+            <input type="text" name="t">
+        </td>
+        </tr>
+        </tbody>
+        </table>
+    <input type="submit" value="计算">
+    </form>
+<hr />
+
+
+<p>计算结果：{{ rlt }}</p>
+<hr />
+<p><em>&copy; ninetiger.com</em></p>
